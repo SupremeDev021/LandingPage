@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supreme-Tech | Automação Inteligente</title>
+    <link rel="stylesheet" href="landingstyle.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo-area">
+            <img src="somente o logo.jpg" alt="Logo">
+            <span>Supreme-Tech</span>
+        </div>
+        <a href="index.html" class="btn-login">🔒 Área do Cliente</a>
+    </nav>
+
+    <header class="hero">
+        <h1>🚀 Muito Além do WhatsApp:<br>Automação Inteligente para o Seu Negócio</h1>
+        <p>O WhatsApp é o nosso carro-chefe para alavancar suas vendas, mas nós automatizamos qualquer processo da sua empresa. Escolha o plano ideal para o seu momento e vamos desenhar uma solução exclusiva para você.</p>
+    </header>
+
+    <section class="plans-container">
+        
+        <div class="plan-card">
+            <div class="plan-header">
+                <h3>🥉 PLANO SUPREME BASIC</h3>
+                <h4>O Robô Autônomo</h4>
+            </div>
+            <p class="plan-desc">A solução perfeita para quem quer dar o primeiro passo na automação e garantir que nenhum cliente fique sem resposta.</p>
+            
+            <ul class="plan-features">
+                <li><span>🤖</span> <div><b>Atendimento Automático 24/7:</b> Sua loja aberta e respondendo clientes de madrugada, domingos e feriados.</div></li>
+                <li><span>💬</span> <div><b>Fluxos Sob Medida:</b> O robô conversa com a "cara" da sua empresa, adaptado para a sua operação.</div></li>
+                <li><span>🗄️</span> <div><b>Armazenamento Inteligente:</b> Dados salvos com segurança.</div></li>
+                <li><span>⚙️</span> <div><b>Área do Cliente Exclusiva:</b> Um painel com login e senha para você fazer ajustes rápidos.</div></li>
+            </ul>
+
+            <div class="price-box" style="border-left-color: #cd7f32;"> 
+                <strong style="color: #fff; font-size: 1.1rem;">💰 Investimento: Sob Consulta</strong>
+                <p>Cada negócio é único. Para projetos mais simples, você pode ter Taxa de Setup ZERO, pagando apenas a mensalidade de manutenção do servidor.</p>
+            </div>
+            
+            <button onclick="chamarWhatsApp('basic')" class="btn-cta">Falar com Especialista</button>
+        </div>
+
+        <div class="plan-card popular">
+            <div class="plan-header">
+                <h3>🥈 PLANO SUPREME SUPER</h3>
+                <h4>Automação + Atendimento Humano</h4>
+            </div>
+            <p class="plan-desc">Nosso formato mais procurado. Ideal para quem precisa da velocidade do robô, mas não abre mão da equipe humana organizada.</p>
+            
+            <ul class="plan-features">
+                <li><span>👥</span> <div><b>Múltiplos Atendentes:</b> Toda a sua equipe conectada no mesmo WhatsApp, sem bagunça.</div></li>
+                <li><span>🔄</span> <div><b>Transferência Inteligente:</b> O robô faz a triagem (excelente para o público idoso) e transfere para o humano certo na hora certa.</div></li>
+                <li><span>🎟️</span> <div><b>Organização por Filas:</b> Acabe com a confusão de mensagens perdidas usando tickets.</div></li>
+                <li><span>📅</span> <div><b>Integração de Agenda:</b> O bot marca, remarca e cancela agendamentos de forma 100% automática.</div></li>
+            </ul>
+
+            <div class="price-box" style="border-left-color: #c0c0c0;"> 
+                <strong style="color: #fff; font-size: 1.1rem;">💰 Investimento: Sob Consulta</strong>
+                <p>Analisamos a estrutura atual da sua equipe e montamos um orçamento sob medida, focando apenas no que você realmente precisa.</p>
+            </div>
+            
+            <button onclick="chamarWhatsApp('super')" class="btn-cta">Falar com Especialista</button>
+        </div>
+
+        <div class="plan-card">
+            <div class="plan-header">
+                <h3>🥇 PLANO SUPREME ELITE</h3>
+                <h4>A Máquina de Vendas Completa</h4>
+            </div>
+            <p class="plan-desc">Uma estrutura de ponta, desenhada para escalar suas vendas, reduzir faltas e integrar todas as áreas do seu negócio.</p>
+            
+            <ul class="plan-features">
+                <li><span>🔔</span> <div><b>Lembretes Automáticos:</b> O bot manda mensagens confirmando agendamentos sozinho, reduzindo faltas.</div></li>
+                <li><span>🌐</span> <div><b>Landing Page de Alta Conversão:</b> Um site profissional exclusivo da sua loja, integrado ao WhatsApp.</div></li>
+                <li><span>📊</span> <div><b>Dashboard de Métricas:</b> Acompanhe os números de vendas e volume de atendimentos em tempo real.</div></li>
+                <li><span>♾️</span> <div><b>Automações Extras:</b> Integramos estoque, faturamento e outros sistemas que você já usa.</div></li>
+            </ul>
+
+            <div class="price-box" style="border-left-color: #ffd700;"> 
+                <strong style="color: #fff; font-size: 1.1rem;">💰 Investimento: Sob Consulta</strong>
+                <p>Uma solução 100% personalizada e robusta, desenvolvida do zero para ser o motor do seu crescimento estrutural.</p>
+            </div>
+            
+            <button onclick="chamarWhatsApp('elite')" class="btn-cta">Falar com Especialista</button>
+        </div>
+
+    </section>
+
+    <section class="info-section">
+        <div class="info-box">
+            <h2>💡 Como funcionam nossos valores?</h2>
+            <p>Nós não vendemos "pacotes engessados". Se a sua necessidade for simples, você não paga pelo desenvolvimento (Setup), apenas a mensalidade de manutenção. Se precisar de uma estrutura complexa, cobramos um valor justo e parcelado, para que a automação se pague rapidamente com o tempo que sua equipe vai economizar.</p>
+            
+            <button onclick="chamarWhatsApp('geral')" class="btn-cta" style="display: inline-block; width: auto; padding: 15px 40px;">📱 QUERO FALAR COM UM ESPECIALISTA</button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 Supreme-Tech. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="landingjava.js"></script>
+</body>
+</html>
