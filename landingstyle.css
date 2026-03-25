@@ -1,6 +1,6 @@
-/* ========================================== */
-/* VARIÁVEIS DE CORES (Idênticas ao Painel)   */
-/* ========================================== */
+/* IMPORTANDO A FONTE MONTSERRAT DO GOOGLE */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
 :root {
     --bg-dark: #121212;
     --surface: #1e1e24;
@@ -16,7 +16,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    /* FONTE APLICADA AQUI */
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* GARANTINDO QUE TÍTULOS E BOTÕES FIQUEM EM NEGRITO (BOLD) */
+h1, h2, h3, h4, h5, h6, .btn, button, .btn-login, .btn-cta {
+    font-weight: 700;
 }
 
 body {
@@ -62,7 +68,6 @@ nav {
     padding: 10px 20px;
     border-radius: 6px;
     text-decoration: none;
-    font-weight: 600;
     transition: 0.3s;
 }
 
@@ -90,6 +95,7 @@ nav {
     font-size: 1.2rem;
     color: var(--text-muted);
     margin-bottom: 40px;
+    font-weight: 400; /* Texto de apoio normal para dar contraste */
 }
 
 /* PLANOS DE ASSINATURA (Cards) */
@@ -153,7 +159,6 @@ nav {
 
 .plan-header h4 {
     color: var(--primary);
-    font-weight: 500;
     font-size: 1.1rem;
 }
 
@@ -161,6 +166,7 @@ nav {
     color: var(--text-muted);
     font-size: 0.95rem;
     margin-bottom: 25px;
+    font-weight: 400;
 }
 
 .plan-features {
@@ -175,6 +181,7 @@ nav {
     display: flex;
     align-items: flex-start;
     gap: 10px;
+    font-weight: 500;
 }
 
 .plan-features li span {
@@ -194,6 +201,7 @@ nav {
     font-size: 0.9rem;
     color: var(--text-muted);
     margin-top: 5px;
+    font-weight: 400;
 }
 
 .btn-cta {
@@ -203,7 +211,6 @@ nav {
     padding: 15px;
     border-radius: 8px;
     text-decoration: none;
-    font-weight: bold;
     font-size: 1.1rem;
     transition: 0.3s;
     border: none;
@@ -239,6 +246,7 @@ nav {
     color: var(--text-muted);
     font-size: 1.1rem;
     margin-bottom: 30px;
+    font-weight: 400;
 }
 
 .footer {
@@ -246,6 +254,7 @@ nav {
     padding: 30px;
     color: var(--text-muted);
     font-size: 0.9rem;
+    font-weight: 500;
 }
 
 @media (max-width: 768px) {
