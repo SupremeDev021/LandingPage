@@ -3,7 +3,7 @@
 // ==========================================
 
 // Substitua pelo seu número de atendimento (com DDD, sem espaços)
-const numeroWhatsApp = "5521996362590"; 
+const numeroWhatsApp = "552199066299"; 
 
 function chamarWhatsApp(plano) {
     let mensagem = "";
