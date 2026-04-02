@@ -176,8 +176,8 @@ nav {
 /* Dashboard Futurista */
 .mock-dashboard {
     position: absolute;
-    top: 40px; /* Subiu o painel lá para cima */
-    left: -160px; /* Empurrou para a esquerda, liberando a tela */
+    top: 70px; /* Alinha a altura com o topo do celular */
+    left: -260px; /* Empurra bastante para a esquerda, invadindo o texto */
     width: 280px;
     background: rgba(20, 20, 25, 0.85);
     backdrop-filter: blur(12px);
@@ -279,7 +279,8 @@ nav {
     .hero-split { flex-direction: column; text-align: center; margin-top: 100px; }
     .hero-text p { margin: 0 auto 30px auto; }
     .hero-buttons { justify-content: center; }
-    .mock-dashboard { left: 50%; transform: translateX(-50%); bottom: -40px; width: 90%; }
+    /* A linha abaixo foi atualizada com o top: auto; */
+    .mock-dashboard { left: 50%; transform: translateX(-50%); bottom: -40px; top: auto; width: 90%; }
     @keyframes float { 0% { transform: translate(-50%, 0px); } 50% { transform: translate(-50%, -10px); } 100% { transform: translate(-50%, 0px); } }
 }
 
