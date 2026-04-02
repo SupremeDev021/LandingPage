@@ -176,8 +176,8 @@ nav {
 /* Dashboard Futurista */
 .mock-dashboard {
     position: absolute;
-    bottom: 20px;
-    left: -70px;
+    bottom: -10px; /* Desceu o painel */
+    left: -130px; /* Empurrou mais para a esquerda */
     width: 280px;
     background: rgba(20, 20, 25, 0.85);
     backdrop-filter: blur(12px);
@@ -188,7 +188,6 @@ nav {
     box-shadow: 0 15px 35px rgba(0,0,0,0.6);
     animation: float 6s ease-in-out infinite;
 }
-
 .dash-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
 .dash-header h6 { margin: 0; color: #fff; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
 .live-dot { width: 8px; height: 8px; background: #ff3b30; border-radius: 50%; box-shadow: 0 0 8px #ff3b30; }
