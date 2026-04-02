@@ -1,291 +1,41 @@
-/* IMPORTANDO A FONTE MONTSERRAT DO GOOGLE */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+// ==========================================
+// FUNÇÕES DA LANDING PAGE SUPREME-TECH
+// ==========================================
 
-:root {
-    --bg-dark: #0d0e12;
-    --surface: #1e1e24;
-    --primary: #ffc107;
-    --primary-hover: #e0a800;
-    --text-light: #ffffff;
-    --text-muted: #a0a0a0;
-    --border-color: #333;
-    --blue-glow: #00d2ff;
-    --glass-bg: rgba(26, 26, 31, 0.7);
-    --glass-border: rgba(255, 193, 7, 0.2);
-}
+// Substitua pelo seu número de atendimento (com DDD, sem espaços)
+const numeroWhatsApp = "552199066299"; 
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-}
+function chamarWhatsApp(plano) {
+    let mensagem = "";
 
-h1, h2, h3, h4, h5, h6, .btn, button, .btn-login, .btn-cta, .btn-primary, .btn-secondary {
-    font-weight: 700;
-}
+    // Define a mensagem automática baseada no botão que o cliente clicou
+    switch (plano) {
+        case 'consultor':
+            mensagem = "Olá! Gostaria de falar com um consultor para entender como a automação pode ajudar minha empresa.";
+            break;
+        case 'demo':
+            mensagem = "Olá! Tenho interesse em testar a demonstração do bot da Supreme-Tech.";
+            break;
+        case 'basic':
+            mensagem = "Olá! Gostaria de saber mais detalhes e valores do plano Supreme Basic.";
+            break;
+        case 'super':
+            mensagem = "Olá! Tenho interesse no plano Supreme Super e gostaria de falar com um especialista.";
+            break;
+        case 'elite':
+            mensagem = "Olá! Gostaria de agendar uma reunião para entender como o plano Supreme Elite pode escalar meu negócio.";
+            break;
+        case 'geral':
+            mensagem = "Olá! Gostaria de agendar um diagnóstico gratuito para a minha empresa.";
+            break;
+        default:
+            mensagem = "Olá! Quero saber mais sobre as automações da Supreme-Tech.";
+    }
 
-body {
-    background-color: var(--bg-dark);
-    color: var(--text-light);
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-/* NAVEGAÇÃO / HEADER */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 5%;
-    background-color: rgba(13, 14, 18, 0.95);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    backdrop-filter: blur(10px);
-}
-
-.logo-area {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    font-size: 1.6rem;
-    font-weight: bold;
-    color: var(--primary);
-}
-
-.logo-area img {
-    height: 55px; /* Aumentado a pedido do cliente */
-    border-radius: 8px;
-}
-
-.btn-login {
-    background: transparent;
-    color: var(--text-light);
-    border: 1px solid var(--border-color);
-    padding: 10px 20px;
-    border-radius: 6px;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.btn-login:hover {
-    border-color: var(--blue-glow);
-    color: var(--blue-glow);
-}
-
-/* NOVO HERO SPLIT LAYOUT */
-.hero-split {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 120px auto 80px; /* Margem superior ajustada para a nav fixa */
-    padding: 0 5%;
-    gap: 40px;
-}
-
-.hero-text { flex: 1.2; }
-
-.badge {
-    display: inline-block;
-    background: rgba(255, 193, 7, 0.1);
-    color: var(--primary);
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 20px;
-    border: 1px solid var(--glass-border);
-}
-
-.hero-text h1 {
-    font-size: 3.2rem;
-    line-height: 1.1;
-    margin: 0 0 20px 0;
-    color: var(--text-light);
-}
-
-.hero-text h1 span { color: var(--primary); }
-
-.hero-text p {
-    font-size: 1.1rem;
-    color: var(--text-muted);
-    font-weight: 400;
-    margin-bottom: 30px;
-    max-width: 90%;
-}
-
-.hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; }
-
-.btn-primary { 
-    background: var(--primary); color: #000; padding: 14px 28px; 
-    border-radius: 8px; border: none; cursor: pointer; font-size: 1rem; transition: 0.3s; 
-}
-.btn-primary:hover { box-shadow: 0 0 20px rgba(255,193,7,0.4); transform: translateY(-2px); }
-
-.btn-secondary { 
-    background: transparent; color: #fff; padding: 14px 28px; 
-    border-radius: 8px; border: 1px solid var(--text-muted); cursor: pointer; font-size: 1rem; transition: 0.3s; 
-}
-.btn-secondary:hover { border-color: #fff; color: #fff;}
-
-/* GRÁFICOS DA DIREITA (Mockups) */
-.hero-graphics {
-    flex: 1;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 500px;
-}
-
-.glow-effect {
-    position: absolute;
-    width: 300px; height: 300px;
-    background: radial-gradient(circle, rgba(255,193,7,0.2) 0%, rgba(0,0,0,0) 70%);
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 0;
-}
-
-/* Celular */
-.mock-phone {
-    width: 270px; height: 530px;
-    background: #121212;
-    border: 8px solid #2a2a30;
-    border-radius: 35px;
-    position: relative;
-    z-index: 2;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.8);
-    display: flex; flex-direction: column; overflow: hidden;
-}
-.phone-notch { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100px; height: 25px; background: #2a2a30; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; }
-.phone-header { background: #1e1e24; padding: 35px 15px 15px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #333; }
-.avatar { width: 35px; height: 35px; background: var(--primary); border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 18px;}
-.contact-info h5 { margin: 0; color: #fff; font-size: 0.9rem; }
-.contact-info p { margin: 0; color: #4caf50; font-size: 0.7rem; font-weight: 500;}
-
-.chat-area { flex: 1; padding: 15px; display: flex; flex-direction: column; gap: 15px; background: #0d0e12; font-weight: 500;}
-.msg { max-width: 85%; padding: 10px 14px; border-radius: 15px; font-size: 0.8rem; line-height: 1.4; }
-.msg-client { background: #2a2a30; color: #fff; align-self: flex-end; border-bottom-right-radius: 4px; }
-.msg-bot { background: var(--glass-bg); color: #fff; align-self: flex-start; border-bottom-left-radius: 4px; border: 1px solid var(--glass-border); }
-.msg-bot strong { color: var(--primary); }
-
-/* Dashboard Futurista */
-.mock-dashboard {
-    position: absolute;
-    bottom: 20px;
-    left: -70px;
-    width: 280px;
-    background: rgba(20, 20, 25, 0.85);
-    backdrop-filter: blur(12px);
-    border: 1px solid var(--glass-border);
-    border-radius: 16px;
-    padding: 15px;
-    z-index: 3;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
-    animation: float 6s ease-in-out infinite;
-}
-
-.dash-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
-.dash-header h6 { margin: 0; color: #fff; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
-.live-dot { width: 8px; height: 8px; background: #ff3b30; border-radius: 50%; box-shadow: 0 0 8px #ff3b30; }
-
-.metric { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.05); }
-.metric:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0;}
-.metric-title { font-size: 0.75rem; color: var(--text-muted); font-weight: 500;}
-.metric-value { font-size: 1.1rem; color: #fff; font-weight: bold; }
-.metric-value.green { color: #4caf50; }
-
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); }
-    100% { transform: translateY(0px); }
-}
-
-/* PLANOS DE ASSINATURA (Seu estilo original) */
-.plans-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    padding: 0 5%;
-    max-width: 1200px;
-    margin: 0 auto 80px;
-}
-
-.plan-card {
-    background-color: var(--surface);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 40px 30px;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s, box-shadow 0.3s;
-    position: relative;
-}
-
-.plan-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
-    border-color: var(--primary);
-}
-
-.plan-card.popular {
-    border-color: var(--blue-glow);
-    box-shadow: 0 0 20px rgba(0, 210, 255, 0.1);
-}
-
-.plan-card.popular::before {
-    content: 'MAIS PROCURADO';
-    position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--blue-glow);
-    color: #000;
-    font-weight: bold;
-    font-size: 12px;
-    padding: 5px 15px;
-    border-radius: 20px;
-    letter-spacing: 1px;
-}
-
-.plan-header { margin-bottom: 25px; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; }
-.plan-header h3 { font-size: 1.5rem; color: #fff; margin-bottom: 5px; }
-.plan-header h4 { color: var(--primary); font-size: 1.1rem; }
-.plan-desc { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 25px; font-weight: 400; }
-
-.plan-features { list-style: none; margin-bottom: 30px; flex-grow: 1; }
-.plan-features li { margin-bottom: 15px; font-size: 0.95rem; display: flex; align-items: flex-start; gap: 10px; font-weight: 500; }
-.plan-features li span { font-size: 1.2rem; line-height: 1.2; }
-
-.price-box { background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; margin-bottom: 25px; border-left: 4px solid var(--primary); }
-.price-box p { font-size: 0.9rem; color: var(--text-muted); margin-top: 5px; font-weight: 400; }
-
-.btn-cta { background-color: var(--primary); color: #121212; text-align: center; padding: 15px; border-radius: 8px; text-decoration: none; font-size: 1rem; transition: 0.3s; border: none; cursor: pointer; width: 100%; font-weight: bold;}
-.btn-cta:hover { background-color: var(--primary-hover); box-shadow: 0 0 15px rgba(255, 193, 7, 0.4); }
-
-/* SEÇÃO INFO E FOOTER */
-.info-section { background-color: var(--surface); padding: 60px 5%; text-align: center; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
-.info-box { max-width: 800px; margin: 0 auto; }
-.info-box h2 { color: #fff; margin-bottom: 20px; }
-.info-box p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 30px; font-weight: 400; }
-
-.footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 0.9rem; font-weight: 500; }
-
-/* RESPONSIVIDADE */
-@media (max-width: 900px) {
-    .hero-split { flex-direction: column; text-align: center; margin-top: 100px; }
-    .hero-text p { margin: 0 auto 30px auto; }
-    .hero-buttons { justify-content: center; }
-    .mock-dashboard { left: 50%; transform: translateX(-50%); bottom: -40px; width: 90%; }
-    @keyframes float { 0% { transform: translate(-50%, 0px); } 50% { transform: translate(-50%, -10px); } 100% { transform: translate(-50%, 0px); } }
-}
-
-@media (max-width: 768px) {
-    .hero-text h1 { font-size: 2.2rem; }
-    nav { padding: 15px 5%; }
-    .logo-area span { display: none; }
+    // Codifica a mensagem para o formato de link (troca espaços por %20, etc)
+    const mensagemCodificada = encodeURIComponent(mensagem);
+    
+    // Abre a nova guia direto no WhatsApp
+    const url = `https://wa.me/${numeroWhatsApp}?text=${mensagemCodificada}`;
+    window.open(url, '_blank');
 }
