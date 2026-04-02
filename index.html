@@ -10,15 +10,65 @@
 
     <nav>
         <div class="logo-area">
-            <img src="somente o logo.jpg" alt="Logo">
+            <img src="somente o logo.jpg" alt="Logo Supreme-Tech">
             <span>Supreme-Tech</span>
         </div>
         <a href="https://portalcliente.supremetechdev.com" target="_blank" class="btn-login">🔒 Área do Cliente</a>
     </nav>
 
-    <header class="hero">
-        <h1>🚀 Muito Além do WhatsApp:<br>Automação Inteligente para o Seu Negócio</h1>
-        <p>O WhatsApp é o nosso carro-chefe para alavancar suas vendas, mas nós automatizamos qualquer processo da sua empresa. Escolha o plano ideal para o seu momento e vamos desenhar uma solução exclusiva para você.</p>
+    <header class="hero-split">
+        
+        <div class="hero-text">
+            <span class="badge">Muito Além do WhatsApp</span>
+            <h1>Automação <span>Inteligente</span><br>para o Seu Negócio</h1>
+            <p>O WhatsApp é o nosso carro-chefe para alavancar suas vendas, mas nós automatizamos qualquer processo da sua empresa. Escolha o plano ideal para o seu momento e vamos desenhar uma solução exclusiva.</p>
+            
+            <div class="hero-buttons">
+                <button onclick="chamarWhatsApp('consultor')" class="btn-primary">🚀 Falar com Consultor</button>
+                <button onclick="chamarWhatsApp('demo')" class="btn-secondary">Testar Demonstração</button>
+            </div>
+        </div>
+
+        <div class="hero-graphics">
+            <div class="glow-effect"></div>
+            
+            <div class="mock-phone">
+                <div class="phone-notch"></div>
+                <div class="phone-header">
+                    <div class="avatar">🚀</div>
+                    <div class="contact-info">
+                        <h5>Supreminho AI</h5>
+                        <p>● Online</p>
+                    </div>
+                </div>
+                <div class="chat-area">
+                    <div class="msg msg-bot">Olá! Eu sou o <strong>Supreminho</strong>, assistente da Supreme-Tech. Como posso te chamar?</div>
+                    <div class="msg msg-client">Pedro</div>
+                    <div class="msg msg-bot">Prazer, Pedro! Qual é o nome da sua empresa?</div>
+                    <div class="msg msg-client">Construtora Apex</div>
+                    <div class="msg msg-bot">Legal! Você prefere testar nosso Bot de Demonstração ou falar direto com o Comercial?</div>
+                </div>
+            </div>
+
+            <div class="mock-dashboard">
+                <div class="dash-header">
+                    <h6>Métricas em Tempo Real</h6>
+                    <div class="live-dot"></div>
+                </div>
+                <div class="metric">
+                    <span class="metric-title">Atendimentos Hoje</span>
+                    <span class="metric-value">1,482</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-title">Tempo de Resposta</span>
+                    <span class="metric-value green">1.2 Segundos</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-title">Leads Qualificados</span>
+                    <span class="metric-value">+34%</span>
+                </div>
+            </div>
+        </div>
     </header>
 
     <section class="plans-container">
@@ -29,94 +79,79 @@
                 <h4>O Robô Autônomo</h4>
             </div>
             <p class="plan-desc">A solução perfeita para quem quer dar o primeiro passo na automação e garantir que nenhum cliente fique sem resposta.</p>
-            
             <ul class="plan-features">
                 <li><span>🤖</span> <div><b>Atendimento Automático 24/7:</b> Sua loja aberta e respondendo clientes de madrugada, domingos e feriados.</div></li>
-                <li><span>💬</span> <div><b>Fluxos Sob Medida:</b> O robô conversa com a "cara" da sua empresa, adaptado para a sua operação.</div></li>
+                <li><span>💬</span> <div><b>Fluxos Sob Medida:</b> O robô conversa com a "cara" da sua empresa.</div></li>
                 <li><span>🗄️</span> <div><b>Armazenamento Inteligente:</b> Dados salvos com segurança.</div></li>
-                <li><span>⚙️</span> <div><b>Área do Cliente Exclusiva:</b> Um painel com login e senha para você fazer ajustes rápidos e monitorar seu desempenho.</div></li>
+                <li><span>⚙️</span> <div><b>Área do Cliente Exclusiva:</b> Um painel com login e senha para monitorar seu desempenho.</div></li>
             </ul>
-
             <div class="price-box" style="border-left-color: #cd7f32;"> 
                 <strong style="color: #fff; font-size: 1.1rem;">💰 Investimento: Sob Consulta</strong>
-                <p>Cada negócio é único. Para projetos mais simples, você pode ter Taxa de Setup ZERO, pagando apenas a mensalidade de manutenção.</p>
+                <p>Projetos simples podem ter Taxa de Setup ZERO, pagando apenas a mensalidade.</p>
             </div>
-            
             <button onclick="chamarWhatsApp('basic')" class="btn-cta">Falar com Especialista</button>
         </div>
 
         <div class="plan-card popular">
             <div class="plan-header">
                 <h3>🥈 PLANO SUPREME SUPER</h3>
-                <h4>Automação + Atendimento Humano</h4>
+                <h4>Automação + Humano</h4>
             </div>
-            <p class="plan-desc">Nosso formato mais procurado. Ideal para quem precisa da velocidade do robô, mas não abre mão da equipe humana organizada.</p>
-            
+            <p class="plan-desc">Nosso formato mais procurado. Ideal para quem precisa da velocidade do robô sem abrir mão da equipe humana.</p>
             <ul class="plan-features">
-                <li><span>👥</span> <div><b>Múltiplos Atendentes:</b> Toda a sua equipe conectada no mesmo WhatsApp, sem bagunça.</div></li>
-                <li><span>🔄</span> <div><b>Transferência Inteligente:</b> O robô faz a triagem (excelente para o público idoso) e transfere para o humano certo na hora certa.</div></li>
-                <li><span>🎟️</span> <div><b>Organização por Filas:</b> Acabe com a confusão de mensagens perdidas usando tickets.</div></li>
-                <li><span>📅</span> <div><b>Integração de Agenda:</b> O bot marca, remarca e cancela agendamentos de forma 100% automática.</div></li>
+                <li><span>👥</span> <div><b>Múltiplos Atendentes:</b> Toda a equipe no mesmo WhatsApp, sem bagunça.</div></li>
+                <li><span>🔄</span> <div><b>Transferência Inteligente:</b> O robô faz a triagem e transfere para o humano certo.</div></li>
+                <li><span>🎟️</span> <div><b>Organização por Filas:</b> Acabe com a confusão usando tickets.</div></li>
+                <li><span>📅</span> <div><b>Integração de Agenda:</b> O bot marca, remarca e cancela agendamentos sozinho.</div></li>
             </ul>
-
             <div class="price-box" style="border-left-color: #c0c0c0;"> 
                 <strong style="color: #fff; font-size: 1.1rem;">💰 Investimento: Sob Consulta</strong>
-                <p>Analisamos a estrutura atual da sua equipe e montamos um orçamento sob medida, focando apenas no que você realmente precisa.</p>
+                <p>Analisamos a sua estrutura e montamos um orçamento focado apenas no que você precisa.</p>
             </div>
-            
             <button onclick="chamarWhatsApp('super')" class="btn-cta">Falar com Especialista</button>
         </div>
 
         <div class="plan-card">
             <div class="plan-header">
                 <h3>🥇 PLANO SUPREME ELITE</h3>
-                <h4>A Máquina de Vendas Completa</h4>
+                <h4>Máquina de Vendas</h4>
             </div>
-            <p class="plan-desc">Uma estrutura de ponta, desenhada para escalar suas vendas, reduzir faltas e integrar todas as áreas do seu negócio.</p>
-            
+            <p class="plan-desc">Estrutura de ponta, desenhada para escalar suas vendas e integrar todas as áreas do negócio.</p>
             <ul class="plan-features">
-                <li><span>🔔</span> <div><b>Lembretes Automáticos:</b> O bot manda mensagens confirmando agendamentos sozinho, reduzindo faltas.</div></li>
-                <li><span>🌐</span> <div><b>Landing Page de Alta Conversão:</b> Um site profissional exclusivo da sua loja, integrado ao WhatsApp.</div></li>
-                <li><span>📊</span> <div><b>Dashboard de Métricas:</b> Acompanhe os números de vendas e volume de atendimentos em tempo real.</div></li>
-                <li><span>♾️</span> <div><b>Automações Extras:</b> Integramos estoque, faturamento e outros sistemas que você já usa.</div></li>
+                <li><span>🔔</span> <div><b>Lembretes Automáticos:</b> Mensagens confirmando agendamentos, reduzindo faltas.</div></li>
+                <li><span>🌐</span> <div><b>Landing Page:</b> Um site exclusivo da sua loja, integrado ao WhatsApp.</div></li>
+                <li><span>📊</span> <div><b>Dashboard de Métricas:</b> Acompanhe vendas e atendimentos em tempo real.</div></li>
+                <li><span>♾️</span> <div><b>Automações Extras:</b> Integramos estoque, faturamento e outros sistemas.</div></li>
             </ul>
-
             <div class="price-box" style="border-left-color: #ffd700;"> 
                 <strong style="color: #fff; font-size: 1.1rem;">💰 Investimento: Sob Consulta</strong>
-                <p>Uma solução 100% personalizada e robusta, desenvolvida do zero para ser o motor do seu crescimento estrutural.</p>
+                <p>Uma solução personalizada e robusta, desenvolvida do zero para o seu crescimento.</p>
             </div>
-            
             <button onclick="chamarWhatsApp('elite')" class="btn-cta">Falar com Especialista</button>
         </div>
 
-        <div class="pricing-card card-exclusivo" style="border: 2px solid #ffc107; background: #1a1a1f; padding: 30px; border-radius: 12px; text-align: center; display: flex; flex-direction: column; gap: 20px;">
-    
-    <div class="card-header">
-        <span style="background: #ffc107; color: #000; padding: 5px 10px; border-radius: 20px; font-size: 12px; font-weight: bold; text-transform: uppercase;">100% Sob Medida</span>
-        <h3 style="color: #fff; margin-top: 15px; font-size: 1.5rem;">SUPREME EXCLUSIVO</h3>
-        <p style="color: var(--text-muted); font-size: 14px;">Para operações complexas e integrações únicas</p>
-        <h2 class="price" style="color: #ffc107; font-size: 2rem; margin: 15px 0;">Sob Consulta</h2>
-    </div>
-
-    <ul class="features" style="list-style: none; padding: 0; color: #ddd; text-align: left; font-size: 15px; line-height: 1.8;">
-        <li>✅ <strong>Qualquer automação</strong> 100% personalizada</li>
-        <li>✅ Integração direta com seu ERP/CRM</li>
-        <li>✅ Fluxos de atendimento sem limites</li>
-        <li>✅ Gerente de conta e suporte dedicado</li>
-        <li>✅ Setup desenhado à mão por nossa equipe</li>
-    </ul>
-
-    <button onclick="chamarWhatsApp('elite')" class="btn-cta">Falar com Especialista</button>
-    
-</div>
-        
+        <div class="plan-card" style="border: 2px solid #ffc107; background: #1a1a1f; text-align: center; display: flex; flex-direction: column; gap: 20px;">
+            <div class="plan-header" style="border-bottom: none; padding-bottom: 0;">
+                <span style="background: #ffc107; color: #000; padding: 5px 10px; border-radius: 20px; font-size: 12px; font-weight: bold; text-transform: uppercase;">100% Sob Medida</span>
+                <h3 style="color: #fff; margin-top: 15px; font-size: 1.5rem;">SUPREME EXCLUSIVO</h3>
+                <p style="color: var(--text-muted); font-size: 14px;">Para operações complexas e integrações únicas</p>
+                <h2 style="color: #ffc107; font-size: 2rem; margin: 15px 0;">Sob Consulta</h2>
+            </div>
+            <ul class="plan-features" style="text-align: left; font-size: 15px; line-height: 1.8;">
+                <li>✅ <strong>Qualquer automação</strong> 100% personalizada</li>
+                <li>✅ Integração direta com seu ERP/CRM</li>
+                <li>✅ Fluxos de atendimento sem limites</li>
+                <li>✅ Gerente de conta e suporte dedicado</li>
+                <li>✅ Setup desenhado à mão por nossa equipe</li>
+            </ul>
+            <button onclick="chamarWhatsApp('elite')" class="btn-cta" style="margin-top: auto;">Falar com Especialista</button>
+        </div>
     </section>
 
     <section class="info-section">
         <div class="info-box">
             <h2>💡 Como funcionam nossos valores?</h2>
             <p>Nós não vendemos "pacotes engessados". Se a sua necessidade for simples, você não paga pelo desenvolvimento (Setup), apenas a mensalidade de manutenção. Se precisar de uma estrutura complexa, cobramos um valor justo e parcelado, para que a automação se pague rapidamente com o tempo que sua equipe vai economizar.</p>
-            
             <button onclick="chamarWhatsApp('geral')" class="btn-cta" style="display: inline-block; width: auto; padding: 15px 40px;">📱 QUERO FALAR COM UM ESPECIALISTA</button>
         </div>
     </section>
