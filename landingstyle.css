@@ -176,8 +176,8 @@ nav {
 /* Dashboard Futurista */
 .mock-dashboard {
     position: absolute;
-    bottom: -10px; /* Desceu o painel */
-    left: -130px; /* Empurrou mais para a esquerda */
+    top: 40px; /* Subiu o painel lá para cima */
+    left: -160px; /* Empurrou para a esquerda, liberando a tela */
     width: 280px;
     background: rgba(20, 20, 25, 0.85);
     backdrop-filter: blur(12px);
