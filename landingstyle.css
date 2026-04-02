@@ -176,8 +176,8 @@ nav {
 /* Dashboard Futurista */
 .mock-dashboard {
     position: absolute;
-    top: 52px; /* Alinha a altura com o topo do celular */
-    left: -260px; /* Empurra bastante para a esquerda, invadindo o texto */
+    top: 65px; /* Alinha a altura com o topo do celular */
+    left: -250px; /* Empurra bastante para a esquerda, invadindo o texto */
     width: 280px;
     background: rgba(20, 20, 25, 0.85);
     backdrop-filter: blur(12px);
