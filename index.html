@@ -3,29 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Supreme-Tech | Automação Inteligente</title>
+    <title>Supreme Tech | Automações Inteligente</title>
     <link rel="stylesheet" href="landingstyle.css">
 </head>
 <body>
 
+    <div id="led-background"></div>
+
     <nav>
         <div class="logo-area">
-            <img src="somente o logo.jpg" alt="Logo Supreme-Tech">
-            <span>Supreme-Tech</span>
+            <img src="somente o logo.jpg" alt="Logo Supreme-Tech" onerror="this.style.display='none'">
+            <span>Supreme Tech</span>
         </div>
         <a href="https://portalcliente.supremetechdev.com" target="_blank" class="btn-login">🔒 Área do Cliente</a>
     </nav>
 
     <header class="hero-split">
-        
         <div class="hero-text">
             <span class="badge">Muito Além do WhatsApp</span>
-            <h1>Automação <span>Inteligente</span><br>para o Seu Negócio</h1>
+            <h1>Automações <span>Inteligente com IA</span><br>para o Seu Negócio</h1>
             <p>O WhatsApp é o nosso carro-chefe para alavancar suas vendas, mas nós automatizamos qualquer processo da sua empresa. Escolha o plano ideal para o seu momento e vamos desenhar uma solução exclusiva.</p>
             
             <div class="hero-buttons">
                 <button onclick="chamarWhatsApp('consultor')" class="btn-primary">🚀 Falar com Consultor</button>
-                <button onclick="chamarWhatsApp('demo')" class="btn-secondary">Testar Demonstração</button>
             </div>
         </div>
 
@@ -46,7 +46,7 @@
                     <div class="msg msg-client">Pedro</div>
                     <div class="msg msg-bot">Prazer, Pedro! Qual é o nome da sua empresa?</div>
                     <div class="msg msg-client">Construtora Apex</div>
-                    <div class="msg msg-bot">Legal! Você prefere testar nosso Bot de Demonstração ou falar direto com o Comercial?</div>
+                    <div class="msg msg-bot">Legal! Vou te transferir para um de nossos especialistas comerciais agora mesmo.</div>
                 </div>
             </div>
 
@@ -61,7 +61,7 @@
                 </div>
                 <div class="metric">
                     <span class="metric-title">Tempo de Resposta</span>
-                    <span class="metric-value green">1.2 Segundos</span>
+                    <span class="metric-value gold">1.2 Segundos</span>
                 </div>
                 <div class="metric">
                     <span class="metric-title">Leads Qualificados</span>
@@ -72,7 +72,6 @@
     </header>
 
     <section class="plans-container">
-        
         <div class="plan-card">
             <div class="plan-header">
                 <h3>🥉 PLANO SUPREME BASIC</h3>
@@ -130,12 +129,12 @@
             <button onclick="chamarWhatsApp('elite')" class="btn-cta">Falar com Especialista</button>
         </div>
 
-        <div class="plan-card" style="border: 2px solid #ffc107; background: #1a1a1f; text-align: center; display: flex; flex-direction: column; gap: 20px;">
+        <div class="plan-card" style="border: 2px solid var(--primary); background: #121212; text-align: center; display: flex; flex-direction: column; gap: 20px;">
             <div class="plan-header" style="border-bottom: none; padding-bottom: 0;">
-                <span style="background: #ffc107; color: #000; padding: 5px 10px; border-radius: 20px; font-size: 12px; font-weight: bold; text-transform: uppercase;">100% Sob Medida</span>
+                <span style="background: var(--primary); color: #000; padding: 5px 10px; border-radius: 20px; font-size: 12px; font-weight: bold; text-transform: uppercase;">100% Sob Medida</span>
                 <h3 style="color: #fff; margin-top: 15px; font-size: 1.5rem;">SUPREME EXCLUSIVO</h3>
                 <p style="color: var(--text-muted); font-size: 14px;">Para operações complexas e integrações únicas</p>
-                <h2 style="color: #ffc107; font-size: 2rem; margin: 15px 0;">Sob Consulta</h2>
+                <h2 style="color: var(--primary); font-size: 2rem; margin: 15px 0;">Sob Consulta</h2>
             </div>
             <ul class="plan-features" style="text-align: left; font-size: 15px; line-height: 1.8;">
                 <li>✅ <strong>Qualquer automação</strong> 100% personalizada</li>
