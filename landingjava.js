@@ -38,8 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
         container.appendChild(line);
     }
 });
+
 // ==========================================
-// PAINEL ARRASTÁVEL (CAIXA INTEIRA)
+// PAINEL ARRASTÁVEL (BLINDADO CONTRA CSS)
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
     const dashboard = document.getElementById("draggable-dashboard");
@@ -51,15 +52,36 @@ document.addEventListener('DOMContentLoaded', () => {
         dashboard.onmousedown = dragMouseDown;
         dashboard.ontouchstart = dragTouchStart;
 
+        // Função mágica: Converte o CSS complexo em pixels fixos antes de arrastar
+        function travarPosicaoExata() {
+            if (dashboard.dataset.destravado) return; // Só roda no primeiro clique
+            
+            const rect = dashboard.getBoundingClientRect();
+            const parentRect = dashboard.offsetParent.getBoundingClientRect();
+            
+            // Grava a posição atual exata
+            dashboard.style.top = (rect.top - parentRect.top) + "px";
+            dashboard.style.left = (rect.left - parentRect.left) + "px";
+            
+            // "Mata" todas as regras do CSS que causam conflito
+            dashboard.style.bottom = 'auto';
+            dashboard.style.right = 'auto';
+            dashboard.style.transform = 'none';
+            dashboard.style.animation = 'none';
+            dashboard.style.zIndex = '1000';
+            
+            dashboard.dataset.destravado = "true";
+        }
+
+        // --- COMPUTADOR (MOUSE) ---
         function dragMouseDown(e) {
             e.preventDefault();
+            travarPosicaoExata(); // Trava a posição antes de mover
+            
             pos3 = e.clientX;
             pos4 = e.clientY;
             document.onmouseup = closeDragElement;
             document.onmousemove = elementDrag;
-            
-            dashboard.style.animation = 'none'; 
-            dashboard.style.zIndex = '1000'; 
         }
 
         function elementDrag(e) {
@@ -68,6 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
             pos2 = pos4 - e.clientY;
             pos3 = e.clientX;
             pos4 = e.clientY;
+            
             dashboard.style.top = (dashboard.offsetTop - pos2) + "px";
             dashboard.style.left = (dashboard.offsetLeft - pos1) + "px";
         }
@@ -77,20 +100,23 @@ document.addEventListener('DOMContentLoaded', () => {
             document.onmousemove = null;
         }
 
+        // --- CELULAR (TOQUE) ---
         function dragTouchStart(e) {
+            travarPosicaoExata(); // Trava a posição antes de mover
+            
             pos3 = e.touches[0].clientX;
             pos4 = e.touches[0].clientY;
             document.ontouchend = closeDragElementTouch;
             document.ontouchmove = elementDragTouch;
-            dashboard.style.animation = 'none';
-            dashboard.style.zIndex = '1000';
         }
 
         function elementDragTouch(e) {
+            e.preventDefault(); // <--- O SEGREDO PARA O CELULAR! Impede a tela de rolar
             pos1 = pos3 - e.touches[0].clientX;
             pos2 = pos4 - e.touches[0].clientY;
             pos3 = e.touches[0].clientX;
             pos4 = e.touches[0].clientY;
+            
             dashboard.style.top = (dashboard.offsetTop - pos2) + "px";
             dashboard.style.left = (dashboard.offsetLeft - pos1) + "px";
         }
