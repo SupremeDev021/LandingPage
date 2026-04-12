@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
 :root {
-    --bg-dark: #0d0e12;
+    /* COR DE FUNDO ALTERADA PARA PRETO ABSOLUTO PARA MESCLAR COM A LOGO */
+    --bg-dark: #000000; 
     --primary: #ffc107;
     --primary-hover: #e0a800;
     --text-light: #ffffff;
@@ -27,7 +28,7 @@ body {
 
 /* ================= BACKGROUND LED ANIMATION (FIXO NA TELA) ================= */
 #led-background {
-    position: fixed; /* Fica fixo enquanto a página rola */
+    position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
@@ -65,13 +66,14 @@ body {
     100% { top: 100%; opacity: 0; }
 }
 
-/* ================= NAVEGAÇÃO ================= */
+/* ================= NAVEGAÇÃO E LOGO ================= */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 5%;
-    background-color: rgba(13, 14, 18, 0.95);
+    padding: 15px 5%;
+    /* O menu também agora é preto quase total para a logo sumir no fundo */
+    background-color: rgba(0, 0, 0, 0.95); 
     position: fixed;
     width: 100%;
     top: 0;
@@ -89,7 +91,12 @@ nav {
     color: var(--primary);
 }
 
-.logo-area img { height: 55px; border-radius: 8px; }
+/* LOGO AUMENTADA E SEM BORDAS */
+.logo-area img { 
+    height: 85px; 
+    border-radius: 0; /* Remove curvas para o preto mesclar perfeitamente */
+    mix-blend-mode: screen; /* Faz o preto da imagem fundir com o preto do fundo */
+}
 
 .btn-login {
     background: transparent;
@@ -110,14 +117,14 @@ nav {
     align-items: center;
     justify-content: space-between;
     max-width: 1200px;
-    margin: 140px auto 80px;
+    margin: 160px auto 80px; /* Margem ajustada para a logo maior não cobrir o texto */
     padding: 0 5%;
     gap: 40px;
     position: relative;
     z-index: 2;
 }
 
-.hero-text { flex: 1.2; text-align: center; } /* Centralizado conforme o print */
+.hero-text { flex: 1.2; text-align: center; }
 
 .hero-text h1 {
     font-size: 3.5rem;
@@ -157,7 +164,7 @@ nav {
     transform: translateY(-2px); 
 }
 
-/* ================= GRÁFICOS (MOCKUPS) ================= */
+/* ================= GRÁFICOS E CELULAR ================= */
 .hero-graphics {
     flex: 1;
     position: relative;
@@ -188,7 +195,17 @@ nav {
 }
 .phone-notch { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100px; height: 25px; background: #1a1a20; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; }
 .phone-header { background: #121215; padding: 35px 15px 15px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #222; }
-.avatar { width: 35px; height: 35px; background: var(--primary); border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 18px;}
+
+/* AVATAR DO CHAT ATUALIZADO PARA IMAGEM */
+img.avatar { 
+    width: 42px; 
+    height: 42px; 
+    border-radius: 50%; /* Deixa a foto perfeitamente redonda */
+    object-fit: cover; /* Impede que a foto estique e fique deformada */
+    border: 2px solid var(--primary); /* Borda Dourada Premium */
+    background: #000;
+}
+
 .contact-info h5 { margin: 0; color: #fff; font-size: 0.9rem; font-weight: 600;}
 .contact-info p { margin: 0; color: var(--primary); font-size: 0.7rem; font-weight: 600;}
 
@@ -211,78 +228,41 @@ nav {
     z-index: 3;
     box-shadow: 0 20px 40px rgba(0,0,0,0.8);
     animation: float 6s ease-in-out infinite;
-    cursor: grab; /* O cursor agora fica na caixa inteira */
+    cursor: grab; 
     user-select: none;
 }
 
-.mock-dashboard:active {
-    cursor: grabbing; /* Mão fechada ao clicar em qualquer lugar da caixa */
-}
+.mock-dashboard:active { cursor: grabbing; }
 
-.dash-header { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    margin-bottom: 20px; 
-}
-
+.dash-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
 .dash-header h6 { margin: 0; color: #fff; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700;}
 .live-dot { width: 8px; height: 8px; background: var(--primary); border-radius: 50%; box-shadow: 0 0 10px var(--primary); }
 
-.metric { 
-    display: flex; /* Isso garante que o título fique na esquerda e o número na direita */
-    justify-content: space-between; 
-    align-items: center; 
-    margin-bottom: 15px; 
-    padding-bottom: 15px; 
-    border-bottom: 1px solid rgba(255,255,255,0.05); 
-}
+.metric { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); }
 .metric:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0;}
 .metric-title { font-size: 0.75rem; color: var(--text-muted); font-weight: 600;}
 .metric-value { font-size: 1.2rem; color: #fff; font-weight: bold; }
 .metric-value.gold { color: var(--primary); }
-.dash-header { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    margin-bottom: 20px; 
-    cursor: grab; /* Cursor de "mão aberta" */
-    user-select: none; /* Evita que o texto seja selecionado sem querer ao arrastar */
-}
 
-.dash-header:active {
-    cursor: grabbing; /* Cursor de "mão fechada" ao clicar */
-}
-/* ================= LISTA DE FUNÇÕES (TEXTO CORRIDO) ================= */
+/* ================= LISTA DE FUNÇÕES ================= */
 .features-text-section {
     max-width: 800px;
-    margin: 100px auto 60px auto; /* Garante distância do topo */
+    margin: 100px auto 60px auto; 
     padding: 0 20px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Força TUDO pro centro */
+    align-items: center; 
     text-align: center;
     position: relative;
     z-index: 2;
 }
 
-.features-text-section p {
-    font-size: 1.1rem;
-    color: var(--text-light);
-    margin-bottom: 12px;
-    line-height: 1.5;
-}
+.features-text-section p { font-size: 1.1rem; color: var(--text-light); margin-bottom: 12px; line-height: 1.5; }
+.features-text-section p strong { color: var(--primary); font-weight: 600; }
 
-/* Deixa as palavras-chave douradas igual ao seu design */
-.features-text-section p strong {
-    color: var(--primary);
-    font-weight: 600;
-}
-
-/* Uma caixa elegante só para a Garantia/Personalização */
 .custom-guarantee {
     margin-top: 50px;
-    background: rgba(255, 193, 7, 0.05); /* Fundo levemente dourado */
+    background: rgba(255, 193, 7, 0.05); 
     border: 1px solid rgba(255, 193, 7, 0.2);
     padding: 30px;
     border-radius: 12px;
@@ -291,24 +271,9 @@ nav {
     text-align: center;
 }
 
-.custom-guarantee h3 {
-    font-size: 1.5rem;
-    color: var(--primary);
-    margin-bottom: 20px;
-}
-
-.custom-guarantee ul {
-    list-style: none;
-    display: inline-block;
-    text-align: left; /* Mantém os checks alinhados bonitinhos */
-}
-
-.custom-guarantee li {
-    font-size: 1.1rem;
-    color: var(--text-light);
-    margin-bottom: 10px;
-    font-weight: 500;
-}
+.custom-guarantee h3 { font-size: 1.5rem; color: var(--primary); margin-bottom: 20px; }
+.custom-guarantee ul { list-style: none; display: inline-block; text-align: left; }
+.custom-guarantee li { font-size: 1.1rem; color: var(--text-light); margin-bottom: 10px; font-weight: 500; }
 
 /* ================= VALORES E ROBÔ ================= */
 .values-section {
@@ -323,52 +288,19 @@ nav {
     z-index: 2;
 }
 
-.values-section h2 {
-    color: var(--primary);
-    margin-bottom: 20px;
-    font-size: 1.8rem;
-}
+.values-section h2 { color: var(--primary); margin-bottom: 20px; font-size: 1.8rem; }
+.values-section p { color: var(--text-light); font-size: 1.1rem; line-height: 1.8; }
 
-.values-section p {
-    color: var(--text-light);
-    font-size: 1.1rem;
-    line-height: 1.8;
-}
-
-.robot-image {
-    margin-top: 40px;
-    display: flex;
-    justify-content: center;
-}
-
-.robot-image img {
-    max-width: 100%;
-    height: auto;
-    filter: drop-shadow(0 0 25px rgba(255, 193, 7, 0.4));
-}
+.robot-image { margin-top: 40px; display: flex; justify-content: center; }
+.robot-image img { max-width: 100%; height: auto; filter: drop-shadow(0 0 25px rgba(255, 193, 7, 0.4)); }
 
 /* ================= FOOTER ================= */
-.final-cta {
-    text-align: center;
-    margin: 40px 0 80px 0;
-    position: relative;
-    z-index: 2;
-}
-
-.footer {
-    text-align: center;
-    padding: 30px;
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    position: relative;
-    z-index: 2;
-    border-top: 1px solid rgba(255, 193, 7, 0.1);
-}
+.final-cta { text-align: center; margin: 40px 0 80px 0; position: relative; z-index: 2; }
+.footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 0.9rem; position: relative; z-index: 2; border-top: 1px solid rgba(255, 193, 7, 0.1); }
 
 /* ================= RESPONSIVIDADE ================= */
 @media (max-width: 950px) {
-    .hero-split { flex-direction: column; text-align: center; margin-top: 100px; }
+    .hero-split { flex-direction: column; text-align: center; margin-top: 130px; }
     .mock-dashboard { left: 50%; transform: translateX(-50%); bottom: -40px; top: auto; width: 90%; }
     .values-section { flex-direction: column; text-align: center; }
-    @keyframes float { 0% { transform: translate(-50%, 0px); } 50% { transform: translate(-50%, -10px); } 100% { transform: translate(-50%, 0px); } }
 }
