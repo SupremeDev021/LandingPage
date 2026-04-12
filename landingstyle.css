@@ -69,11 +69,10 @@ body {
 /* ================= NAVEGAÇÃO E LOGO ================= */
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Mantém logo e botão nas pontas, se mantiver flex */
     align-items: center;
-    padding: 15px 5%;
-    /* O menu também agora é preto quase total para a logo sumir no fundo */
-    background-color: rgba(0, 0, 0, 0.95); 
+    padding: 20px 2%; /* Diminuímos o padding horizontal para grudar mais a logo */
+    background-color: rgba(13, 14, 18, 0.95);
     position: fixed;
     width: 100%;
     top: 0;
@@ -85,19 +84,28 @@ nav {
 .logo-area {
     display: flex;
     align-items: center;
-    gap: 15px;
-    font-size: 1.6rem;
-    font-weight: bold;
-    color: var(--primary);
+    /* Removemos o gap, pois agora só temos a imagem aqui */
 }
 
-/* LOGO AUMENTADA E SEM BORDAS */
-.logo-area img { 
-    height: 85px; 
-    border-radius: 0; /* Remove curvas para o preto mesclar perfeitamente */
-    mix-blend-mode: screen; /* Faz o preto da imagem fundir com o preto do fundo */
+.logo-area img {
+    height: 100px; /* Aumentamos consideravelmente o tamanho da logo */
+    margin-left: 0; /* Gruda a logo no canto esquerdo da div .logo-area */
+    border-radius: 8px; /* Mantemos ou ajustamos as bordas se preferir */
+    transition: 0.3s;
 }
 
+/* Nova classe para o texto centralizado e maior */
+.centered-text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.5rem; /* Aumentamos bastante o tamanho da frase */
+    color: var(--primary); /* Mantemos a cor dourada */
+    font-weight: 700; /* Negrito */
+    text-shadow: 0 0 15px rgba(255, 193, 7, 0.3); /* Adicionamos um brilho leve opcional */
+    pointer-events: none; /* Garante que cliques passem pelo texto para elementos abaixo */
+    white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+}
 .btn-login {
     background: transparent;
     color: var(--primary);
