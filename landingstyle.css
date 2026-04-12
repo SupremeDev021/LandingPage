@@ -346,9 +346,53 @@ img.avatar {
     }
 }
 
+/* ================= AJUSTES PARA CELULAR (CORREÇÃO DE SOBREPOSIÇÃO) ================= */
 @media (max-width: 768px) {
-    .centered-text { font-size: 20px; }
-    .logo-area img { height: 40px; }
-    .features-grid { grid-template-columns: 1fr; }
-    .values-text h2 { font-size: 1.8rem; }
+    /* 1. Escondemos o texto central no celular */
+    /* Isso evita o atropelo e mantém o cabeçalho sofisticado e funcional */
+    .centered-text {
+        display: none; 
+    }
+    
+    /* 2. Ajustamos o menu para dar mais espaço nas pontas */
+    nav {
+        padding: 0 15px; /* Respiro lateral fixo em pixels para segurança */
+        height: 70px;    /* Altura reduzida para o modo mobile */
+    }
+
+    /* 3. Logo e Botão mais compactos */
+    .logo-area img {
+        height: 35px; /* Logo menor para não pesar no topo */
+    }
+
+    .btn-login {
+        padding: 8px 12px;
+        font-size: 0.75rem; /* Botão menor e mais elegante */
+    }
+
+    /* 4. Ajustes de layout que já tínhamos corrigido */
+    .hero-split { 
+        flex-direction: column; 
+        text-align: center; 
+        margin-top: 100px; /* Menos margem no topo para o celular */
+    }
+
+    .features-grid { 
+        grid-template-columns: 1fr; 
+    }
+
+    .values-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .values-text h2 {
+        font-size: 1.7rem;
+    }
+    
+    .robot-box {
+        order: -1; /* Robô sempre aparece primeiro no mobile */
+        max-width: 200px;
+    }
 }
