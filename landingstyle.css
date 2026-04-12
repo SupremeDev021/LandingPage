@@ -211,7 +211,36 @@ nav {
     z-index: 3;
     box-shadow: 0 20px 40px rgba(0,0,0,0.8);
     animation: float 6s ease-in-out infinite;
+    cursor: grab; /* O cursor agora fica na caixa inteira */
+    user-select: none;
 }
+
+.mock-dashboard:active {
+    cursor: grabbing; /* Mão fechada ao clicar em qualquer lugar da caixa */
+}
+
+.dash-header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 20px; 
+}
+
+.dash-header h6 { margin: 0; color: #fff; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700;}
+.live-dot { width: 8px; height: 8px; background: var(--primary); border-radius: 50%; box-shadow: 0 0 10px var(--primary); }
+
+.metric { 
+    display: flex; /* Isso garante que o título fique na esquerda e o número na direita */
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 15px; 
+    padding-bottom: 15px; 
+    border-bottom: 1px solid rgba(255,255,255,0.05); 
+}
+.metric:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0;}
+.metric-title { font-size: 0.75rem; color: var(--text-muted); font-weight: 600;}
+.metric-value { font-size: 1.2rem; color: #fff; font-weight: bold; }
+.metric-value.gold { color: var(--primary); }
 .dash-header { 
     display: flex; 
     justify-content: space-between; 
