@@ -38,3 +38,67 @@ document.addEventListener('DOMContentLoaded', () => {
         container.appendChild(line);
     }
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const dashboard = document.getElementById("draggable-dashboard");
+    const header = document.getElementById("dashboard-header");
+
+    if (dashboard && header) {
+        let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+
+        // Para Computador (Mouse)
+        header.onmousedown = dragMouseDown;
+        // Para Celular (Toque)
+        header.ontouchstart = dragTouchStart;
+
+        function dragMouseDown(e) {
+            e.preventDefault();
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            document.onmousemove = elementDrag;
+            
+            // Quando clica, pára a animação de "flutuar" para não bugar o arrasto
+            dashboard.style.animation = 'none'; 
+            dashboard.style.zIndex = '1000'; // Joga pra frente de tudo
+        }
+
+        function elementDrag(e) {
+            e.preventDefault();
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            dashboard.style.top = (dashboard.offsetTop - pos2) + "px";
+            dashboard.style.left = (dashboard.offsetLeft - pos1) + "px";
+        }
+
+        function closeDragElement() {
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
+
+        // Funções espelhadas para o Toque (Celular)
+        function dragTouchStart(e) {
+            pos3 = e.touches[0].clientX;
+            pos4 = e.touches[0].clientY;
+            document.ontouchend = closeDragElementTouch;
+            document.ontouchmove = elementDragTouch;
+            dashboard.style.animation = 'none';
+            dashboard.style.zIndex = '1000';
+        }
+
+        function elementDragTouch(e) {
+            pos1 = pos3 - e.touches[0].clientX;
+            pos2 = pos4 - e.touches[0].clientY;
+            pos3 = e.touches[0].clientX;
+            pos4 = e.touches[0].clientY;
+            dashboard.style.top = (dashboard.offsetTop - pos2) + "px";
+            dashboard.style.left = (dashboard.offsetLeft - pos1) + "px";
+        }
+
+        function closeDragElementTouch() {
+            document.ontouchend = null;
+            document.ontouchmove = null;
+        }
+    }
+});
