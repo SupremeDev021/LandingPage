@@ -38,17 +38,18 @@ document.addEventListener('DOMContentLoaded', () => {
         container.appendChild(line);
     }
 });
+// ==========================================
+// PAINEL ARRASTÁVEL (CAIXA INTEIRA)
+// ==========================================
 document.addEventListener('DOMContentLoaded', () => {
     const dashboard = document.getElementById("draggable-dashboard");
-    const header = document.getElementById("dashboard-header");
 
-    if (dashboard && header) {
+    if (dashboard) {
         let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
 
-        // Para Computador (Mouse)
-        header.onmousedown = dragMouseDown;
-        // Para Celular (Toque)
-        header.ontouchstart = dragTouchStart;
+        // Atribui o arrasto à caixa inteira
+        dashboard.onmousedown = dragMouseDown;
+        dashboard.ontouchstart = dragTouchStart;
 
         function dragMouseDown(e) {
             e.preventDefault();
@@ -57,9 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
             document.onmouseup = closeDragElement;
             document.onmousemove = elementDrag;
             
-            // Quando clica, pára a animação de "flutuar" para não bugar o arrasto
             dashboard.style.animation = 'none'; 
-            dashboard.style.zIndex = '1000'; // Joga pra frente de tudo
+            dashboard.style.zIndex = '1000'; 
         }
 
         function elementDrag(e) {
@@ -77,7 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
             document.onmousemove = null;
         }
 
-        // Funções espelhadas para o Toque (Celular)
         function dragTouchStart(e) {
             pos3 = e.touches[0].clientX;
             pos4 = e.touches[0].clientY;
