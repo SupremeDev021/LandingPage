@@ -65,7 +65,7 @@ body {
     100% { top: 100%; opacity: 0; }
 }
 
-/* ================= NAVEGAÇÃO ================= */
+/* ================= NAVEGAÇÃO E LOGO ================= */
 nav {
     display: flex;
     justify-content: space-between;
@@ -198,7 +198,6 @@ nav {
 .phone-notch { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100px; height: 25px; background: #1a1a20; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; }
 .phone-header { background: #121215; padding: 35px 15px 15px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #222; }
 
-/* FOTO DO CHAT */
 img.avatar { 
     width: 42px; 
     height: 42px; 
@@ -258,52 +257,61 @@ img.avatar {
 .feature-card h3 { color: var(--primary); font-size: 1.1rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
 .feature-card p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.5; }
 
-/* CAIXA DE PERSONALIZAÇÃO */
-.custom-guarantee {
-    margin: 60px auto 0;
-    background: rgba(255, 193, 7, 0.05); 
-    border: 1px solid rgba(255, 193, 7, 0.2);
-    padding: 30px;
-    border-radius: 12px;
-    width: 100%;
-    max-width: 600px;
-    text-align: center;
-    backdrop-filter: blur(5px);
-}
-
-.custom-guarantee h3 { font-size: 1.5rem; color: var(--primary); margin-bottom: 20px; }
-.custom-guarantee ul { list-style: none; display: inline-block; text-align: left; }
-.custom-guarantee li { font-size: 1.1rem; color: var(--text-light); margin-bottom: 10px; font-weight: 500; }
-
-/* ================= VALORES E ROBÔ ================= */
+/* ================= VALORES E ROBÔ ALINHADOS ================= */
 .values-section {
-    max-width: 1100px;
-    margin: 100px auto 60px;
-    padding: 0 5%;
+    background-color: #000000;
+    padding: 100px 5%;
+    display: flex;
+    justify-content: center;
     position: relative;
     z-index: 2;
 }
 
-.values-glass-card {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 193, 7, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 50px;
+.values-container {
+    max-width: 1100px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 40px;
+    gap: 60px;
+}
+
+.values-text {
+    flex: 1.2;
     text-align: left;
 }
 
-.values-text { flex: 1.2; }
-.values-text h2 { color: var(--primary); font-size: 2rem; margin-bottom: 20px; }
-.values-text p { font-size: 1.1rem; color: var(--text-light); margin-bottom: 30px; line-height: 1.8; }
-.final-cta { margin-top: 20px; }
+.values-text h2 {
+    color: var(--primary);
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
 
-.robot-image { flex: 0.8; display: flex; justify-content: center; }
-.robot-image img { max-width: 100%; height: auto; filter: drop-shadow(0 0 30px rgba(255, 193, 7, 0.2)); }
+.values-text p {
+    color: #fff;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+.values-cta {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.robot-box {
+    flex: 0.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.robot-box img {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 25px rgba(255, 193, 7, 0.3)); 
+}
 
 /* ================= FOOTER ================= */
 .footer {
@@ -319,12 +327,28 @@ img.avatar {
 /* ================= RESPONSIVIDADE ================= */
 @media (max-width: 950px) {
     .hero-split { flex-direction: column; text-align: center; margin-top: 130px; }
-    .values-glass-card { flex-direction: column; text-align: center; padding: 30px; }
-    .robot-image { order: -1; max-width: 250px; }
+    
+    .values-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+    .values-text {
+        text-align: center;
+        order: 2;
+    }
+    .values-cta {
+        justify-content: center;
+    }
+    .robot-box {
+        order: 1;
+        max-width: 250px;
+    }
 }
 
 @media (max-width: 768px) {
     .centered-text { font-size: 20px; }
     .logo-area img { height: 40px; }
     .features-grid { grid-template-columns: 1fr; }
+    .values-text h2 { font-size: 1.8rem; }
 }
