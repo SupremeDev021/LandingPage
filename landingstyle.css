@@ -369,9 +369,11 @@ img.avatar {
 .robot-box img {
     max-width: 100%;
     height: auto;
-    filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.3)); 
+    border-radius: 24px; /* <--- ISSO VAI ARREDONDAR AS BORDAS GRACIOSAMENTE */
+    object-fit: cover;   /* Garante que a imagem se adapte ao corte sem esticar */
+    filter: drop-shadow(0 20px 40px rgba(0, 210, 255, 0.2)); 
+    animation: float 6s ease-in-out infinite;
 }
-
 /* ================= FOOTER ================= */
 .footer {
     text-align: center;
