@@ -5,15 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Supreme-Tech | Automação Inteligente</title>
     <link rel="icon" href="logost.jpg" type="image/jpeg">
-    <link rel="stylesheet" href="landingstyle.css?v=6.5">
+    <link rel="stylesheet" href="landingstyle.css?v=7.0">
+    <style>
+        .reveal { opacity: 0; transform: translateY(50px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        
+        .tech-banner { background: #040912; padding: 20px 0; border-top: 1px solid rgba(0, 210, 255, 0.1); border-bottom: 1px solid rgba(0, 210, 255, 0.1); overflow: hidden; display: flex; white-space: nowrap; position: relative; z-index: 2; margin-top: -40px; }
+        .tech-banner::before, .tech-banner::after { content: ""; position: absolute; top: 0; width: 150px; height: 100%; z-index: 2; }
+        .tech-banner::before { left: 0; background: linear-gradient(to right, #07101E 0%, transparent 100%); }
+        .tech-banner::after { right: 0; background: linear-gradient(to left, #07101E 0%, transparent 100%); }
+        .tech-track { display: flex; gap: 60px; animation: scrollBanner 30s linear infinite; align-items: center; }
+        .tech-track span { color: #9BA4B5; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; display: flex; align-items: center; gap: 10px; }
+        .tech-track span i { color: #D4AF37; font-style: normal; }
+        @keyframes scrollBanner { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    </style>
 </head>
 <body>
 
     <div id="led-background"></div>
 
-    <nav>
+    <nav id="main-nav">
         <div class="logo-area">
-            <img src="logost.png" alt="Logo Supreme-Tech" onerror="this.style.display='none'">
+            <img src="logost.jpg" alt="Logo Supreme-Tech" onerror="this.style.display='none'">
         </div>
 
         <div class="centered-text">Supreme Tech</div>
@@ -34,115 +47,85 @@
         <div class="hero-graphics">
             <div class="glow-effect"></div>
             
-            <div class="mock-phone">
+            <div class="mock-phone tilt-element">
                 <div class="phone-notch"></div>
                 <div class="phone-header">
-                    <img src="supreminhochat.jpg" alt="Supreminho AI" class="avatar" onerror="this.src='https://via.placeholder.com/40/ffc107/000000?text=AI'">
+                    <img src="supreminhochat.jpg" alt="Supreminho AI" class="avatar" onerror="this.src='https://via.placeholder.com/40/00D2FF/000000?text=AI'">
                     <div class="contact-info">
                         <h5>Supreminho AI</h5>
                         <p>● Online</p>
                     </div>
                 </div>
-                <div class="chat-area">
-                    <div class="msg msg-bot">Olá! Eu sou o <strong>Supreminho</strong>, assistente da Supreme-Tech. Como posso te chamar?</div>
-                    <div class="msg msg-client">Pedro</div>
-                    <div class="msg msg-bot">Prazer, Pedro! Qual é o nome da sua empresa?</div>
-                    <div class="msg msg-client">Construtora Apex</div>
-                    <div class="msg msg-bot">Legal! Vou te transferir para um de nossos especialistas comerciais agora mesmo.</div>
-                </div>
+                <div class="chat-area" id="chat-container">
+                    </div>
             </div>
         </div>
     </header>
 
+    <div class="tech-banner reveal">
+        <div class="tech-track" id="tech-track">
+            </div>
+    </div>
+
     <section class="features-grid-section">
-        <div class="section-header">
+        <div class="section-header reveal">
             <h2>Soluções <span>Supreme</span></h2>
-            <p>Tudo o que você precisa para dominar o seu mercado com automação.</p>
+            <p>Ecossistema completo para dominar o atendimento e a gestão da sua empresa.</p>
         </div>
 
         <div class="features-grid">
-            <div class="feature-card">
+            <div class="feature-card tilt-element reveal">
                 <div class="f-icon">🤖</div>
                 <h3>Atendimento 24/7</h3>
-                <p>Sua loja aberta e respondendo clientes de madrugada, domingos e feriados.</p>
+                <p>Sua loja aberta e respondendo clientes de madrugada, domingos e feriados com perfeição.</p>
             </div>
-            <div class="feature-card">
+            <div class="feature-card tilt-element reveal">
                 <div class="f-icon">🎯</div>
                 <h3>Fluxos Sob Medida</h3>
-                <p>O robô conversa com a "cara" e o tom de voz da sua empresa.</p>
+                <p>O robô conversa com a "cara" e o tom de voz da sua empresa, guiando para a venda.</p>
             </div>
-            <div class="feature-card">
-                <div class="f-icon">🔐</div>
-                <h3>Armazenamento</h3>
-                <p>Dados salvos com segurança máxima e inteligência de dados.</p>
-            </div>
-            <div class="feature-card">
-                <div class="f-icon">👤</div>
-                <h3>Área do Cliente</h3>
-                <p>Um painel exclusivo com login e senha para monitorar seu desempenho.</p>
-            </div>
-            <div class="feature-card">
+            <div class="feature-card tilt-element reveal">
                 <div class="f-icon">👥</div>
                 <h3>Multiatendimento</h3>
-                <p>Toda a sua equipe utilizando o mesmo número de WhatsApp sem bagunça.</p>
+                <p>Toda a sua equipe utilizando o mesmo número de WhatsApp, sem bagunça e com auditoria.</p>
             </div>
-            <div class="feature-card">
+            <div class="feature-card tilt-element reveal">
                 <div class="f-icon">🔄</div>
                 <h3>Triagem Inteligente</h3>
-                <p>O robô faz a triagem inicial e transfere para o humano certo automaticamente.</p>
+                <p>A IA faz a qualificação inicial do lead e transfere para o humano certo automaticamente.</p>
             </div>
-            <div class="feature-card">
+            <div class="feature-card tilt-element reveal">
                 <div class="f-icon">🎫</div>
                 <h3>Gestão por Filas</h3>
-                <p>Acabe com a confusão no atendimento utilizando tickets e filas organizadas.</p>
+                <p>Acabe com a confusão. Organize os chamados utilizando tickets, tags e filas de prioridade.</p>
             </div>
-            <div class="feature-card">
-                <div class="f-icon">📅</div>
-                <h3>Agenda Integrada</h3>
-                <p>O bot marca, remarca e cancela agendamentos direto no seu sistema.</p>
-            </div>
-            <div class="feature-card">
-                <div class="f-icon">🔔</div>
-                <h3>Lembretes</h3>
-                <p>Mensagens automáticas confirmando agendamentos e reduzindo faltas.</p>
-            </div>
-            <div class="feature-card">
+            <div class="feature-card tilt-element reveal">
                 <div class="f-icon">🌐</div>
-                <h3>Landing Page</h3>
-                <p>Um site exclusivo da sua loja, totalmente integrado ao seu WhatsApp.</p>
-            </div>
-            <div class="feature-card">
-                <div class="f-icon">📊</div>
-                <h3>Dashboards</h3>
-                <p>Acompanhe suas vendas e métricas de atendimento em tempo real.</p>
-            </div>
-            <div class="feature-card">
-                <div class="f-icon">♾️</div>
-                <h3>Integrações Extras</h3>
-                <p>Conectamos seu estoque, faturamento e ERP ao fluxo de automação.</p>
+                <h3>Integração Total</h3>
+                <p>Conectamos o seu WhatsApp aos seus sistemas web, painéis de gestão e bancos de dados.</p>
             </div>
         </div>
     </section>
 
     <section class="values-section">
         <div class="values-container">
-            <div class="values-text">
-                <h2>💡 Quanto vou investir?</h2>
-                <p>Nós não vendemos "pacotes engessados". Se a sua necessidade for simples, o custo é baixo. Se precisar de uma estrutura complexa, cobramos um valor justo e parcelado, para que a automação se pague rapidamente com o tempo que sua equipe vai economizar.</p>
+            <div class="values-text reveal">
+                <h2>💡 Estruturas Escaláveis</h2>
+                <p>Nós não vendemos "pacotes engessados". Desenhamos fluxos lógicos precisos. Se a sua necessidade for simples, a implantação é rápida. Se precisar de uma arquitetura complexa em servidores dedicados, entregamos com maestria técnica e valor justo.</p>
                 
                 <div class="values-cta">
-                    <button onclick="chamarWhatsApp('consultor')" class="btn-primary">🚀 Falar com Consultor</button>
+                    <button onclick="chamarWhatsApp('consultor')" class="btn-primary">🚀 Iniciar Projeto</button>
                 </div>
             </div>
             
-            <div class="robot-box">
-                <img src="robo-dourado.png" alt="Robô Supreme Tech" onerror="this.style.display='none'">
+            <div class="robot-box reveal">
+                <img src="robo-dourado.png" alt="Inteligência Artificial Supreme Tech" onerror="this.style.display='none'">
             </div>
         </div>
     </section>
 
     <footer class="footer">
-        <p>&copy; 2026 Supreme-Tech. Todos os direitos reservados.</p>
+        <p>&copy; 2026 Supreme-Tech. Excelência em Automação. Todos os direitos reservados.</p>
     </footer>
 
     <script src="landingjava.js"></script>
