@@ -460,7 +460,8 @@ img.avatar {
     }
 
     .logo-area img {
-        height: 35px; 
+        height: 42px;      /* No mobile ela reduz ligeiramente para manter a elegância */
+        max-width: 130px;  /* Limite seguro para não esmagar o topo do celular */
     }
 
     .btn-login {
