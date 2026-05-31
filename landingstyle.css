@@ -366,12 +366,46 @@ img.avatar {
     align-items: center;
 }
 
+/* ========================================== */
+/* ESTILIZAÇÃO DO ROBÔ INTEGRADO AO ECOSSISTEMA */
+/* ========================================== */
+
+.robot-box {
+    flex: 0.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Criando uma aura brilhante por trás do robô */
+.robot-box::after {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    background: radial-gradient(circle, rgba(0, 210, 255, 0.2) 0%, transparent 70%);
+    z-index: 1;
+    pointer-events: none;
+}
+
 .robot-box img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 24px; /* <--- ISSO VAI ARREDONDAR AS BORDAS GRACIOSAMENTE */
-    object-fit: cover;   /* Garante que a imagem se adapte ao corte sem esticar */
-    filter: drop-shadow(0 20px 40px rgba(0, 210, 255, 0.2)); 
+    width: 280px;          /* Força uma largura fixa quadrada para o círculo perfeito */
+    height: 280px;         /* Força a altura idêntica à largura */
+    object-fit: cover;     /* Faz o robô centralizar e cortar sem esticar */
+    border-radius: 50%;    /* Transforma a foto em um círculo perfeito */
+    
+    /* Borda tecnológica: Fusão de Dourado e Ciano com Brilho Neon */
+    border: 3px solid transparent;
+    background: linear-gradient(var(--bg-dark), var(--bg-dark)) padding-box,
+                linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%) border-box;
+    
+    /* Sombra profunda + Brilho de emanação cibernética */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 
+                0 0 30px rgba(0, 210, 255, 0.2); 
+                
+    position: relative;
+    z-index: 2;
     animation: float 6s ease-in-out infinite;
 }
 /* ================= FOOTER ================= */
