@@ -110,19 +110,21 @@ nav {
     transform: scale(1.05); /* Efeito suave de crescimento ao passar o mouse */
 }
 
+/* ================= TÍTULO CENTRAL (CORREÇÃO DE EMPILHAMENTO) ================= */
 .centered-text {
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
-    font-size: 28px; 
+    top: 50%;
+    transform: translate(-50%, -50%) translateZ(0); /* Centralização perfeita em 3D */
+    font-size: 26px; /* Ajuste milimétrico para design de software */
     font-weight: 900; 
     letter-spacing: 5px; 
     text-transform: uppercase;
     pointer-events: none;
     white-space: nowrap;
     
-    /* ISSO TRAZ O TEXTO PARA A CAMADA DA FRENTE DA BARRA FOSCA */
-    z-index: 1001; 
+    /* Força o texto a ir para a camada da frente de forma isolada */
+    z-index: 1010 !important; 
 
     /* Gradiente Correndo */
     background: linear-gradient(
@@ -132,6 +134,18 @@ nav {
         var(--primary) 66%, 
         var(--accent) 100%
     );
+    background-size: 300% auto;
+    
+    /* Preenchimento Seguro */
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    
+    /* Sombra de emanação de luz */
+    text-shadow: 0 0 15px rgba(0, 210, 255, 0.5), 0 0 30px rgba(212, 175, 55, 0.2);
+
+    animation: hologlow 4s linear infinite;
+}
     background-size: 300% auto;
     
     /* Preenchimento Seguro para Navegadores */
