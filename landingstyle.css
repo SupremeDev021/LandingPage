@@ -93,7 +93,7 @@ nav {
 }
 
 .logo-area img {
-    height: 100px;          /* Aumentamos a altura para dar mais corpo */
+    height: 32px;          /* Aumentamos a altura para dar mais corpo */
     width: auto;           /* Mantém a proporção perfeita da imagem */
     max-width: 180px;      /* Estende a largura máxima para dar presença */
     object-fit: contain;   /* Garante que o desenho não distorça de forma alguma */
@@ -105,8 +105,6 @@ nav {
     transform: scale(1.05); /* Efeito suave de crescimento ao passar o mouse */
 }
 
-/* ================= TÍTULO CENTRAL (HOLOGRÁFICO E NEON) ================= */
-/* ================= TÍTULO CENTRAL (CORRIGIDO PARA TODOS OS NAVEGADORES) ================= */
 .centered-text {
     position: absolute;
     left: 50%;
@@ -117,6 +115,9 @@ nav {
     text-transform: uppercase;
     pointer-events: none;
     white-space: nowrap;
+    
+    /* ISSO TRAZ O TEXTO PARA A CAMADA DA FRENTE DA BARRA FOSCA */
+    z-index: 1001; 
 
     /* Gradiente Correndo */
     background: linear-gradient(
@@ -126,6 +127,19 @@ nav {
         var(--primary) 66%, 
         var(--accent) 100%
     );
+    background-size: 300% auto;
+    
+    /* Preenchimento Seguro para Navegadores */
+    color: var(--primary); 
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    
+    /* Brilho Seguro em volta do texto */
+    text-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
+
+    animation: hologlow 4s linear infinite;
+}
     background-size: 300% auto;
     
     /* Preenchimento Seguro para Navegadores */
