@@ -1,19 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+/* IMPORTANDO AS DUAS FONTES SUPREME-TECH */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;500;600;700&display=swap');
 
 :root {
-    --bg-dark: #000000; 
-    --primary: #ffc107;
-    --primary-hover: #e0a800;
-    --text-light: #ffffff;
-    --text-muted: #cccccc;
-    --glass-bg: rgba(26, 26, 31, 0.85);
-    --glass-border: rgba(255, 193, 7, 0.2);
+    /* NOVA PALETA SUPREME TECH */
+    --bg-dark: #0A192F;         /* Azul Profundo (Fundo principal) */
+    --card-bg: #2D3436;         /* Cinza Escuro (Cards e mockups) */
+    --primary: #D4AF37;         /* Dourado Supreme */
+    --primary-hover: #b5952f;   /* Dourado Hover */
+    --accent: #00D2FF;          /* Ciano (Detalhes tecnológicos/LEDs) */
+    --text-light: #F8F9FA;      /* Branco/Off-white */
+    --text-muted: rgba(248, 249, 250, 0.6); /* Texto Secundário */
+    
+    /* EFEITOS VIDRO */
+    --glass-bg: rgba(45, 52, 54, 0.85);
+    --glass-border: rgba(212, 175, 55, 0.2);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* FONTE SECUNDÁRIA PARA TODO O CORPO DO SITE */
+    font-family: 'Inter', sans-serif;
+}
+
+/* FONTE PRIMÁRIA PARA OS TÍTULOS E DESTAQUES */
+h1, h2, h3, h4, h5, h6, .centered-text {
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -25,7 +37,7 @@ body {
     position: relative;
 }
 
-/* ================= BACKGROUND LED ANIMATION ================= */
+/* ================= BACKGROUND LED ANIMATION (AGORA EM CIANO) ================= */
 #led-background {
     position: fixed; 
     top: 0;
@@ -35,13 +47,13 @@ body {
     z-index: -1;
     display: flex;
     justify-content: space-around;
-    opacity: 0.8;
+    opacity: 0.6;
 }
 
 .led-line {
     width: 1px;
     height: 100%;
-    background: rgba(255, 193, 7, 0.08); 
+    background: rgba(0, 210, 255, 0.08); /* Trilha ciano bem suave */
     position: relative;
     overflow: hidden;
 }
@@ -51,8 +63,8 @@ body {
     top: -150px;
     width: 2px;
     height: 150px; 
-    background: #ffc107;
-    box-shadow: 0 0 15px 3px rgba(255, 193, 7, 0.8), 0 0 40px 8px rgba(255, 193, 7, 0.4);
+    background: var(--accent);
+    box-shadow: 0 0 15px 3px rgba(0, 210, 255, 0.8), 0 0 40px 8px rgba(0, 210, 255, 0.4);
     transform: translateX(-0.5px);
     animation: drop linear infinite;
     border-radius: 50%;
@@ -71,13 +83,13 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 10px 1%; 
-    background-color: #000000;
+    background-color: var(--bg-dark);
     height: 80px; 
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid rgba(255, 193, 7, 0.1);
+    border-bottom: 1px solid var(--glass-border);
 }
 
 .logo-area img {
@@ -91,7 +103,7 @@ nav {
     left: 50%;
     transform: translateX(-50%);
     font-size: 32px; 
-    color: #ffc107;
+    color: var(--primary);
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -111,7 +123,11 @@ nav {
     transition: 0.3s;
 }
 
-.btn-login:hover { background: var(--primary); color: #000; box-shadow: 0 0 15px rgba(255, 193, 7, 0.3); }
+.btn-login:hover { 
+    background: var(--primary); 
+    color: var(--bg-dark); 
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3); 
+}
 
 /* ================= HERO SECTION ================= */
 .hero-split {
@@ -136,7 +152,10 @@ nav {
     font-weight: 700;
 }
 
-.hero-text h1 span { color: var(--primary); text-shadow: 0 0 15px rgba(255, 193, 7, 0.3); }
+.hero-text h1 span { 
+    color: var(--primary); 
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.3); 
+}
 
 .hero-text p {
     font-size: 1.1rem;
@@ -150,19 +169,20 @@ nav {
 
 .btn-primary { 
     background: var(--primary); 
-    color: #000; 
+    color: var(--bg-dark); 
     padding: 16px 36px; 
     border-radius: 8px; 
     border: none; 
     cursor: pointer; 
     font-size: 1.1rem; 
     font-weight: 700;
+    font-family: 'Inter', sans-serif;
     transition: 0.3s; 
-    box-shadow: 0 0 15px rgba(255, 193, 7, 0.2);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
 }
 .btn-primary:hover { 
     background: var(--primary-hover);
-    box-shadow: 0 0 25px rgba(255,193,7,0.6); 
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.6); 
     transform: translateY(-2px); 
 }
 
@@ -179,7 +199,7 @@ nav {
 .glow-effect {
     position: absolute;
     width: 350px; height: 350px;
-    background: radial-gradient(circle, rgba(255,193,7,0.15) 0%, rgba(0,0,0,0) 70%);
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(0,0,0,0) 70%);
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
     z-index: 0;
@@ -187,16 +207,29 @@ nav {
 
 .mock-phone {
     width: 270px; height: 530px;
-    background: #0a0a0c;
-    border: 6px solid #1a1a20;
+    background: var(--bg-dark);
+    border: 6px solid var(--card-bg);
     border-radius: 35px;
     position: relative;
     z-index: 2;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.9), 0 0 0 1px rgba(255, 193, 7, 0.3);
+    box-shadow: 0 25px 50px rgba(10, 25, 47, 0.9), 0 0 0 1px rgba(212, 175, 55, 0.3);
     display: flex; flex-direction: column; overflow: hidden;
 }
-.phone-notch { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100px; height: 25px; background: #1a1a20; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; }
-.phone-header { background: #121215; padding: 35px 15px 15px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #222; }
+.phone-notch { 
+    position: absolute; 
+    top: 0; left: 50%; 
+    transform: translateX(-50%); 
+    width: 100px; height: 25px; 
+    background: var(--card-bg); 
+    border-bottom-left-radius: 15px; 
+    border-bottom-right-radius: 15px; 
+}
+.phone-header { 
+    background: var(--card-bg); 
+    padding: 35px 15px 15px; 
+    display: flex; align-items: center; gap: 10px; 
+    border-bottom: 1px solid rgba(248, 249, 250, 0.05); 
+}
 
 img.avatar { 
     width: 42px; 
@@ -204,16 +237,42 @@ img.avatar {
     border-radius: 50%; 
     object-fit: cover; 
     border: 2px solid var(--primary); 
-    background: #000;
+    background: var(--bg-dark);
 }
 
-.contact-info h5 { margin: 0; color: #fff; font-size: 0.9rem; font-weight: 600;}
+.contact-info h5 { margin: 0; color: var(--text-light); font-size: 0.9rem; font-weight: 600;}
 .contact-info p { margin: 0; color: var(--primary); font-size: 0.7rem; font-weight: 600;}
 
-.chat-area { flex: 1; padding: 15px; display: flex; flex-direction: column; gap: 15px; background: #0a0a0c; font-weight: 500;}
-.msg { max-width: 85%; padding: 10px 14px; border-radius: 15px; font-size: 0.8rem; line-height: 1.4; }
-.msg-client { background: #222; color: #fff; align-self: flex-end; border-bottom-right-radius: 4px; }
-.msg-bot { background: var(--glass-bg); color: #fff; align-self: flex-start; border-bottom-left-radius: 4px; border: 1px solid var(--glass-border); box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+.chat-area { 
+    flex: 1; 
+    padding: 15px; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 15px; 
+    background: var(--bg-dark); 
+    font-weight: 500;
+}
+.msg { 
+    max-width: 85%; 
+    padding: 10px 14px; 
+    border-radius: 15px; 
+    font-size: 0.8rem; 
+    line-height: 1.4; 
+}
+.msg-client { 
+    background: var(--card-bg); 
+    color: var(--text-light); 
+    align-self: flex-end; 
+    border-bottom-right-radius: 4px; 
+}
+.msg-bot { 
+    background: var(--glass-bg); 
+    color: var(--text-light); 
+    align-self: flex-start; 
+    border-bottom-left-radius: 4px; 
+    border: 1px solid var(--glass-border); 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3); 
+}
 .msg-bot strong { color: var(--primary); }
 
 /* ================= GRID DE SOLUÇÕES (EFEITO VIDRO) ================= */
@@ -226,7 +285,7 @@ img.avatar {
 }
 
 .section-header { text-align: center; margin-bottom: 50px; }
-.section-header h2 { font-size: 2.2rem; color: #fff; text-transform: uppercase; letter-spacing: 2px; }
+.section-header h2 { font-size: 2.2rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 2px; }
 .section-header h2 span { color: var(--primary); }
 .section-header p { color: var(--text-muted); margin-top: 10px; }
 
@@ -237,8 +296,8 @@ img.avatar {
 }
 
 .feature-card {
-    background: rgba(255, 255, 255, 0.03); 
-    border: 1px solid rgba(255, 193, 7, 0.1); 
+    background: rgba(45, 52, 54, 0.4); 
+    border: 1px solid rgba(212, 175, 55, 0.1); 
     padding: 30px;
     border-radius: 15px;
     transition: 0.4s all ease;
@@ -247,10 +306,10 @@ img.avatar {
 }
 
 .feature-card:hover {
-    background: rgba(255, 193, 7, 0.05);
+    background: rgba(45, 52, 54, 0.8);
     border-color: var(--primary); 
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 30px rgba(10, 25, 47, 0.5);
 }
 
 .f-icon { font-size: 24px; margin-bottom: 15px; display: block; }
@@ -259,7 +318,7 @@ img.avatar {
 
 /* ================= VALORES E ROBÔ ALINHADOS ================= */
 .values-section {
-    background-color: #000000;
+    background-color: var(--bg-dark);
     padding: 100px 5%;
     display: flex;
     justify-content: center;
@@ -289,7 +348,7 @@ img.avatar {
 }
 
 .values-text p {
-    color: #fff;
+    color: var(--text-light);
     font-size: 1.15rem;
     line-height: 1.8;
     margin-bottom: 35px;
@@ -310,7 +369,7 @@ img.avatar {
 .robot-box img {
     max-width: 100%;
     height: auto;
-    filter: drop-shadow(0 0 25px rgba(255, 193, 7, 0.3)); 
+    filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.3)); 
 }
 
 /* ================= FOOTER ================= */
@@ -319,7 +378,7 @@ img.avatar {
     padding: 40px 20px;
     color: var(--text-muted);
     font-size: 0.9rem;
-    border-top: 1px solid rgba(255, 193, 7, 0.05);
+    border-top: 1px solid rgba(212, 175, 55, 0.05);
     position: relative;
     z-index: 2;
 }
@@ -346,35 +405,30 @@ img.avatar {
     }
 }
 
-/* ================= AJUSTES PARA CELULAR (CORREÇÃO DE SOBREPOSIÇÃO) ================= */
+/* ================= AJUSTES PARA CELULAR ================= */
 @media (max-width: 768px) {
-    /* 1. Escondemos o texto central no celular */
-    /* Isso evita o atropelo e mantém o cabeçalho sofisticado e funcional */
     .centered-text {
         display: none; 
     }
     
-    /* 2. Ajustamos o menu para dar mais espaço nas pontas */
     nav {
-        padding: 0 15px; /* Respiro lateral fixo em pixels para segurança */
-        height: 70px;    /* Altura reduzida para o modo mobile */
+        padding: 0 15px;
+        height: 70px;    
     }
 
-    /* 3. Logo e Botão mais compactos */
     .logo-area img {
-        height: 35px; /* Logo menor para não pesar no topo */
+        height: 35px; 
     }
 
     .btn-login {
         padding: 8px 12px;
-        font-size: 0.75rem; /* Botão menor e mais elegante */
+        font-size: 0.75rem; 
     }
 
-    /* 4. Ajustes de layout que já tínhamos corrigido */
     .hero-split { 
         flex-direction: column; 
         text-align: center; 
-        margin-top: 100px; /* Menos margem no topo para o celular */
+        margin-top: 100px; 
     }
 
     .features-grid { 
@@ -392,7 +446,7 @@ img.avatar {
     }
     
     .robot-box {
-        order: -1; /* Robô sempre aparece primeiro no mobile */
+        order: -1; 
         max-width: 200px;
     }
 }
