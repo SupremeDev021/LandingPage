@@ -86,9 +86,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     const techTrack = document.getElementById('tech-track');
     if (techTrack) {
+
         const techs = [
-            "n8n Workflow", "Chatwoot", "Docker", "Evolution API", 
-            "PostgreSQL", "Node.js", "Looker Studio", "Linux Server"
+            "Inteligência Artificial Cognitiva", 
+            "Processamento de Linguagem Natural (NLP)", 
+            "Automação Omnichannel", 
+            "Machine Learning Aplicado", 
+            "Análise Preditiva de Dados", 
+            "Roteamento Neural de Leads", 
+            "Arquitetura Cloud Escalável", 
+            "Criptografia Ponta a Ponta"
         ];
         
         // Criar a string de tecnologias com separadores dourados
