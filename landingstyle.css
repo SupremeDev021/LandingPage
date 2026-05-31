@@ -105,17 +105,42 @@ nav {
     transform: scale(1.05); /* Efeito suave de crescimento ao passar o mouse */
 }
 
+/* ================= TÍTULO CENTRAL (HOLOGRÁFICO E NEON) ================= */
 .centered-text {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 32px; 
-    color: var(--primary);
-    font-weight: 700;
-    letter-spacing: 1px;
+    font-size: 28px; /* Ligeiramente maior */
+    font-weight: 900; /* Peso máximo para a fonte ficar bem encorpada */
+    letter-spacing: 5px; /* Espaçamento mais largo e futurista */
     text-transform: uppercase;
     pointer-events: none;
     white-space: nowrap;
+
+    /* Mistura de Cores Dinâmica (Ciano -> Dourado Brilhante -> Dourado Escuro -> Ciano) */
+    background: linear-gradient(
+        90deg, 
+        var(--accent) 0%, 
+        var(--primary-light) 33%, 
+        var(--primary) 66%, 
+        var(--accent) 100%
+    );
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* A mágica do Neon: Usamos drop-shadow ao invés de text-shadow para brilhar em volta da tinta */
+    filter: drop-shadow(0 0 8px rgba(0, 210, 255, 0.7)) 
+            drop-shadow(0 0 20px rgba(212, 175, 55, 0.5));
+
+    /* Animação que faz o brilho e as cores correrem pela palavra */
+    animation: hologlow 4s linear infinite;
+}
+
+/* Criando a animação de corrida do gradiente */
+@keyframes hologlow {
+    to { background-position: 300% center; }
+}
 }
 
 .btn-login {
