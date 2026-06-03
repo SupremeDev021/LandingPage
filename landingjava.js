@@ -2,7 +2,7 @@
 // SUPREME-TECH | CORE ENGINE JS
 // ==========================================
 
-const numeroWhatsApp = "5521990662990"; 
+const numeroWhatsApp = "5521994849344"; 
 
 // 1. FUNÇÃO DE REDIRECIONAMENTO COM ENCODE SEGURO
 function chamarWhatsApp(origem) {
